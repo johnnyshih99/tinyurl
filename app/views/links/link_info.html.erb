@@ -1,0 +1,7 @@
+<h1>Visit Log (most recent)</h1>
+<h3><%= @link.url %> => <%= root_url + @link.token %></h3>
+<% @visits.each do |visit| %>
+  <p>
+    Visit from <em><%= visit.ip_addr %></em> on <em><%= visit.created_at %></em>
+  </p>
+<% end %>

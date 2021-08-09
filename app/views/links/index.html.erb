@@ -1,0 +1,10 @@
+<h1>Links</h1>
+<ul>
+  <% @links.each do |link| %>
+    <li><p>
+      url => <%= link.url %><br> 
+      token => <%= link.token %><br>
+      tinyUrl => <%= root_url + link.token %>
+    </p></li>
+  <% end %>
+</ul>

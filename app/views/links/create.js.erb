@@ -1,0 +1,15 @@
+document.querySelectorAll("#new-link .error").forEach(function(div) {div.innerHTML=""});
+document.querySelector("#result").style.display = "none";
+<% if @link.errors.any? %>
+  <% @link.errors.each do |err| %> 
+    var div = document.querySelector("#new-link .error");
+    div.insertAdjacentHTML("beforeend", "<div><%= err.full_message %></div>");
+  <% end %>
+<% else %>
+  var token_url = "<%= root_url + @link.token %>";
+  var result = document.querySelector("#result"); 
+  result.style.display = "block";
+  result.querySelector("p a.tinyurl").innerHTML = token_url;
+  result.querySelector("p a.tinyurl").setAttribute('href', token_url);
+  result.querySelector("p a.info").setAttribute('href', token_url + "/info");
+<% end %>

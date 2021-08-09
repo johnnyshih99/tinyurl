@@ -1,0 +1,29 @@
+<h1>TinyUrl</h1>
+<a href="<%= links_path %>">Most recently created links</a>
+<%= form_with(model: @link, id: 'new-link', local: false) do |form| %>
+  <p>
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+    <%= form.submit %>
+    <div class="error url"></div>
+  </p>
+  
+<% end %>
+
+<div id="result">
+  TinyURL generated:
+  <!-- turbolinks makes invalid url run visit_link twice -->
+  <!-- this can cause extra visits being created. so turn off -->
+  <p><a class="tinyurl" data-turbolinks="false"></a></p>
+  <p><a class="info">Info</a></p>
+</div>
+
+<style>
+  .error {
+    color:  red;
+  }
+
+  #result {
+    display: none;
+  }
+</style>
