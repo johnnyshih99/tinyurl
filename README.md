@@ -22,6 +22,11 @@ All routes show up on the home page.
 The shortened URL and its info page dynamically shows up after submit.
 However no graceful back or home ui were implemented for the links and info page. We'll have to use the browser back button, or manually enter the appropriate route
 
+* Validation  
+Validation is kept to minimum  
+Therefore it's possible for an invalid URL (but valid format. e.g. http://123, http://123.com) to get a short URL.  
+The app still tries to redirect to the invalid URL and we'll just get unreachable which is expected.
+
 * Token Generation  
 Given the suggested time spent on the project (90 mins!?), I opted for a very (maybe overly) simplistic approach.  
 Token generation simply generate random token and query the database to see if it already exists.  
