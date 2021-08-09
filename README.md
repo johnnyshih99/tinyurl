@@ -28,3 +28,7 @@ Token generation simply generate random token and query the database to see if i
 If it does, simply keep trying until one that doesn't exist appears.  
 I do recognize this is a very simplistic strategy and can quickly run into scaling issues.  
 A better approach as discussed by many system design discussions is to have a separate token generation service that generates and keeps track of used and unused tokens.
+
+* Other Issues
+Database cleanup  
+Caching for performance  
